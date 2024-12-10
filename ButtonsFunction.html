@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <!-- CDNJ Font Awesome Link Tag-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Compiled Fontawesome -->
+    <script src="https://kit.fontawesome.com/2a83c49f4d.js" crossorigin="anonymous"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" type="image/jpg" href="favicon.png">
+    <title>Buttons</title>
+    <link rel="stylesheet" href="ButtonsFunction.css">
+</head>
+<body>
+    <nav class="custom-nav">
+        <div class="nav-wrapper">
+            <a href="" class="brand-logo center"><img src="LOGO.png" alt=""></a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="ArduinWeb.html"><i class="fa-solid fa-house"></i></li>
+            </ul>
+
+            <ul id="mobile-demo" class="sidenav">
+                <div class="brand-logo">
+                    <img src="LOGO.png" alt="">
+                    <p>Create. Innovate. ReCreate</p>
+                </div>
+                <br><br>
+                <li style="font-family: Century;"><a href="CONFIGTFT.html" class="white-text">CONFIGURATION</a></li>
+                <li style="font-family: Century;"><a href="TEXTANDCOLORS.html" class="white-text">TEXT AND COLORS</a></li>
+                <li style="font-family: Century;"><a href="FILLSCREEN.html" class="white-text">FILLSCREEN</a></li>
+                <li style="font-family: Century;"><a href="ButtonsFunction.html" class="white-text">BUTTONS </a></li>
+                <div style="height:150px"></div>
+                <li><a href="" class="white-text">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+<!--Floating Action Button-->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large white">
+        <i class="fa-regular fa-plus black-text"></i>
+    </a>
+    <ul>
+        <li><a href="#" class="btn-floating light-green"><i class="fa-solid fa-arrow-up black-text"></i></a></li>
+        <li><a href="AboutUS.html" class="btn-floating teal"><i class="fa-solid fa-question black-text"></i></a></li>
+        <li><a href="ArduinWeb.html" class="btn-floating cyan"><i class="fa-solid fa-house black-text"></i></a></li>
+    </ul>
+</div>
+<!-- End of Floating Action-->
+<h1 class="center white-text">BUTTONS AND FUNCTIONS</h1>
+
+<div class="container">
+    <blockquote class="black-text">
+        Buttons and functions at TFT are possible since we are using an Arduino module to create operations that we can easily manipulate to create a whole and functioning button
+    </blockquote>
+
+<div class="container">
+    <div class="row">
+        <div class="col s6">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            Adafruit_GFX 
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="white">
+                    <tr>
+                        <th>Adafruit_GFX_Button <i class="teal-text">Create Button Call out Names</i></th>
+                    </tr>
+                    <tr>
+                    <th>Adafruit_GFX_Button <i class="teal-text">ON</i></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col s6">
+            <table>
+                <thead>
+                    <tr>
+                        <th>
+                            TouchScreen ts
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="white">
+                    <tr>
+                        <th><i class="orange-text">TouchScreen</i><i class="teal-text">(XP,YP,XM,YM,300)</i>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>This lets you initialize the Touchscreen library</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>Button Init</th>
+            </tr>
+        </thead>
+        <tbody class="white">
+            <tr>
+                <th>
+                    <i class="purple-text">Button Callout name in Adafruit_GFX</i><i class="orange-text">.initButton</i><i class="teal-text">(&tft,X pos,Y pos,Width,Height,Outline Color,Fill Color,Text Color, Text printed, Textsize);
+                    </i>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <i class="purple-text">ON</i><i class="orange-text">.initButton</i><i class="teal-text">(&tft,  60, 200, 100, 40, WHITE, CYAN, BLACK, "ON", 2);
+                    </i> 
+                </th>
+            </tr>
+        </tbody>
+    </table>
+
+<blockquote>
+    To be able to make this buttons appear whether it is active or not put this inside the  <i class="teal-text">void</i> <i class="orange-text">setup</i>()
+</blockquote>
+
+    <table>
+        <tbody class="white">
+            <tr>
+                <th class="teal">Format</th>
+                <th><i class="purple-text">Name of the Button Callout</i>.<i class="orange-text">drawButton</i><i class="teal-text">(true/false);</i></th>
+            </tr>
+            <tr>
+                <th class="teal">Sample</th>
+                <th><i class="purple-text">ON</i>.<i class="orange-text">drawButton</i><i class="teal-text">(true);</i> or <i class="purple-text">ON</i>.<i class="orange-text">drawButton</i><i class="teal-text">(false);</i></th>
+            </tr>
+        </tbody>
+    </table>
+
+    <blockquote>
+        The purpose of a true and a false specification will show the button whereas if it is called in <i class="purple-text">false</i> state it would act as an inactive button while in <i class="orange-text">true</i> state shows it as if it is an active or pressed button.
+        Let's Try it putting these codes into work.
+    </blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Start of Code Box-->
+<div class="code-box">
+    <pre id="codeSnippet">
+        <code>
+//BUTTONS
+
+//Libraries start with #include <Library.h>
+#include <'Adafruit_GFX.h'>
+#include <'MCUFRIEND_kbv.h'>
+#include <'TouchScreen.h'>
+            
+//Use "MCUFRIEND_kbv (name); create a name that you will use in the call out of the code later on
+MCUFRIEND_kbv tft;
+
+//Define the Minimum and Maximum resistance for the Touchscreen threshold
+#define MINPRESSURE 100
+#define MAXPRESSURE 1000
+
+
+//This is the list of the code if u want to add more just use the #define function with a format of #define-"COLOR NAME"-Hex Value
+#define BLACK       0x0000      /*   0,   0,   0 */
+#define NAVY        0x000F      /*   0,   0, 128 */
+#define DARKGREEN   0x03E0      /*   0, 128,   0 */
+#define DARKCYAN    0x03EF      /*   0, 128, 128 */
+#define MAROON      0x7800      /* 128,   0,   0 */
+#define PURPLE      0x780F      /* 128,   0, 128 */
+#define OLIVE       0x7BE0      /* 128, 128,   0 */
+#define LIGHTGREY   0xC618      /* 192, 192, 192 */
+#define DARKGREY    0x7BEF      /* 128, 128, 128 */
+#define BLUE        0x001F      /*   0,   0, 255 */
+#define GREEN       0x07E0      /*   0, 255,   0 */
+#define CYAN        0x07FF      /*   0, 255, 255 */
+#define RED         0xF800      /* 255,   0,   0 */
+#define MAGENTA     0xF81F      /* 255,   0, 255 */
+#define YELLOW      0xFFE0      /* 255, 255,   0 */
+#define WHITE       0xFFFF      /* 255, 255, 255 */
+#define ORANGE      0xFD20      /* 255, 165,   0 */
+#define GREENYELLOW 0xAFE5      /* 173, 255,  47 */
+#define PINK        0xF81F
+
+//This is for the Call out Pins on the Arduino Pins
+const int XP = 6, XM = A2, YP = A1, YM = 7;
+
+//This is for the sensitivity of the Touchscreen Module
+//NOTE!!! ~~ This differs on TFT Modules check it with the callibration
+const int TS_LEFT =907, TS_RT = 136, TS_TOP = 942, TS_BOT = 139;
+
+//Touch Screen Pins in the Arduino
+TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+
+//Listing and naming of Buttons
+Adafruit_GFX_Button ON,OFF;
+
+//This part focuses on setting up the Touch attributes for the Touchscreen function to work
+int pixel_x, pixel_y;  
+bool Touch_getXY(void)
+{
+TSPoint p = ts.getPoint();
+pinMode(YP, OUTPUT);      //restore shared pins
+pinMode(XM, OUTPUT);
+digitalWrite(YP, HIGH);   //because TFT control pins
+digitalWrite(XM, HIGH);
+bool pressed = (p.z > MINPRESSURE && p.z < MAXPRESSURE);
+if (pressed) {
+pixel_x = map(p.x, TS_LEFT, TS_RT, 0, tft.width()); //.kbv makes sense to me
+pixel_y = map(p.y, TS_TOP, TS_BOT, 0, tft.height());
+}
+return pressed;
+}
+
+void setup() {
+// put your setup code here, to run once:
+uint16_t ID = tft.readID(); //This is used to read the driver chips inside the TFT for it to run smoothly
+if (ID == 0xD3D3) ID = 0x9486; //
+tft.begin(ID);    //Use this to Initialize the TFT
+tft.fillScreen(BLACK);  //This is normally used to restart the whole Screen
+
+//Button Inits
+            
+ON.initButton(&tft,  60, 200, 100, 40, WHITE, CYAN, BLACK, "ON", 2);
+OFF.initButton(&tft, 180, 200, 100, 40, WHITE, CYAN, BLACK, "OFF", 2);
+
+
+ON.drawButton(false); //drawButton functions
+OFF.drawButton(false); //drawButton functions
+}
+
+void loop(){
+bool down = Touch_getXY();
+ON.press(down && ON.contains(pixel_x, pixel_y));
+OFF.press(down && OFF.contains(pixel_x, pixel_y));
+
+if (ON.justReleased())
+ON.drawButton();
+if (OFF.justReleased())
+OFF.drawButton();
+if (ON.justPressed()) {
+ON.drawButton(true);
+tft.fillRect(40, 80, 160, 80, GREEN);
+}
+if (OFF.justPressed()) {
+OFF.drawButton(true);
+tft.fillRect(40, 80, 160, 80, RED);
+}
+}
+            
+            
+        </code>
+    </pre>
+    <button class="copy-btn" id="copyButton">Copy Code</button>
+</div>
+</div>
+<!-- End of Code Copy-->
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col s6 m6 l6">
+            <blockquote>
+                This is how your TFT should look like!
+            </blockquote>
+            <blockquote>
+                The color above the buttons should differ every time you touch a different button <i class="green-text">Green</i> with ON while <i class="red-text">Red</i> with OFF.
+            </blockquote>
+        </div>
+        <div class="col s6 m6 l6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="BUTTONSCREEN.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="height: 200px;"></div>
+
+<footer class="page-footer teal accent-4">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <a href="" class="brand-logo"><img src="LOGO.png" alt=""></a>
+                <p class="white-text">Create. Innovate. Recreate.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 style="font-family: Century;" class="white-text">Let's Talk</h5>
+                <ul>
+                    <li><a style="font-family: Century;"class="grey-text text-lighten-3" href="https://www.facebook.com/rj.resma/"> <i class="fa-brands fa-facebook"></i> Rj Resma</a></li>
+                    <br>
+                    <li><div style="font-family: Century;"class="grey-text text-lighten-3" href=""><i class="fa-solid fa-square-phone"></i> +63 927 734 5492</div></li>
+                    <li style="font-family: Century;"><a class="grey-text text-lighten-3" href="https://twitter.com/doteplayers"><i class="fa-solid fa-envelope"></i></a> rrupertjames@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <h7 class="teal-text">Arduino 2024 <i class="fa-solid fa-copyright"></i></h7>
+    </div>
+</footer>
+
+    <!-- Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+    
+        //Code Copy Button
+    $(document).ready(function () {
+        $('#copyButton').click(function () {
+            // Select the code text
+        const codeText = $('#codeSnippet').text();
+    
+            // Use the Clipboard API to copy text
+        navigator.clipboard.writeText(codeText)
+            .then(function () {
+                alert('Code copied to clipboard!');
+                })
+                .catch(function (error) {
+                    console.error('Failed to copy code: ', error);
+                });
+                    });
+            });
+            $(document).ready(function(){
+                $('.fixed-action-btn').floatingActionButton();
+            });
+            $(document).ready(function(){
+            $('.sidenav').sidenav();
+            });
+
+        </script>
+
+
+
+</body>
+</html>

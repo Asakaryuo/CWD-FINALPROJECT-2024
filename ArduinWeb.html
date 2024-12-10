@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CDNJ Font Awesome Link Tag-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--Compiled Fontawesome -->
+        <script src="https://kit.fontawesome.com/2a83c49f4d.js" crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+        <link rel="icon" type="image/jpg" href="favicon.png">
+    <title>CIRC: TFT Arduino Display</title>
+
+    <link rel="stylesheet" href="ardstyle.css">
+</head>
+<body>
+    <nav class="custom-nav">
+        <div class="nav-wrapper">
+            <div class="brand-logo center"><img src="LOGO.png" alt=""></div>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="ArduinWeb.html"><i class="fa-solid fa-house"></i></li>
+            </ul>
+
+            <ul id="mobile-demo" class="sidenav">
+                <div class="brand-logo">
+                    <img src="LOGO.png" alt="">
+                    <h6>Create. Innovate. ReCreate</h6>
+                </div>
+                <br><br>
+                <li style="font-family: Century;"><a href="CONFIGTFT.html" class="white-text">CONFIGURATION</a></li>
+                <li style="font-family: Century;"><a href="TEXTANDCOLORS.html" class="white-text">TEXT AND COLORS</a></li>
+                <li style="font-family: Century;"><a href="FILLSCREEN.html" class="white-text">FILLSCREEN</a></li>
+                <li style="font-family: Century;"><a href="ButtonsFunction.html" class="white-text">BUTTONS </a></li>
+                <div style="height:150px"></div>
+                <li><a href="AboutUS.html" class="white-text">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+<!--Floating Action Button-->
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large white">
+            <i class="fa-regular fa-plus black-text"></i>
+        </a>
+        <ul>
+            <li><a href="#" class="btn-floating light-green"><i class="fa-solid fa-arrow-up black-text"></i></a></li>
+            <li><a href="AboutUS.html" class="btn-floating teal"><i class="fa-solid fa-question black-text"></i></a></li>
+            <li><a href="ArduinWeb.html" class="btn-floating cyan"><i class="fa-solid fa-house black-text"></i></a></li>
+        </ul>
+    </div>
+<!-- End of Floating Action-->
+
+        <h1 class="center custom-heading">ARDUINO TFT TOUCHSCREEN DISPLAY WALKTHROUGH</h1>
+        <br><br><br>
+    <div class="container">
+            <blockquote class="white black-text">Arduino TFT Displays are often used in Monitoring Systems by the use of an Microcontroller(Arduino Modules) and TFT Displays which can be manipulated through certain degrees. This is very important especially when you’re running on a project which prioritizes on monitoring with special needs for a display hardware and can be paired with cheap microcontrollers such as an Arduino controllers.</blockquote>
+            <br><br>
+    <div class="slider">
+        <ul class="slides">
+            <li><img src="TFT1.jpg" alt=""></li>
+            <li><img src="TFT2.jpg" alt=""></li>
+            <li><img src="TFT3.jpg" alt=""></li>
+            <li><img src="TFT4.jpg" alt=""></li>
+        </ul>
+    </div>
+</div>
+
+<!-- Materials Div-->
+<br><br><br>
+<h2 class="white-text"> Here's What You'll Need</h2>
+<br>
+
+<div class="container">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col s12 m6">
+            <div class="card teal accent-4">
+                <div class="card-image">
+                    <img class="responsive-img"src="ARDUINOMEGA.png" alt="Arduino Mega">
+                    <span class="card-title right ">Arduino ATmega 2560</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col s12 m6">
+            <div class="card teal accent-4">
+                <div class="card-image">
+                    <img src="TFT35.png" alt="Arduino Mega">
+                    <span class="card-title">3.5" TFT Display</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card teal accent-4">
+                <div class="card-image center">
+                    <img src="CHORD.png" alt="Arduino Mega">
+                    <span class="card-title">CH340 Chord</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card teal accent-4">
+                <div class="card-image center">
+                    <img src="IDE-Photoroom.png" alt="Arduino Mega">
+                    <span class="card-title">Arduino IDE</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<h2 class="white-text"> Libraries Needed</h2>
+<br>
+
+<div class="container">
+    <table class="teal-accent-4">
+        <thead class="teal accent-4">
+            <tr>
+                <th>Extention</th>
+                <th>Function</th>
+            </tr>
+        </thead>
+        <tbody class="white">
+            <tr>
+                <th>Adafruit_GFX.h</th>
+                <td>Graphics Library for Adafruit display functions</td>
+            </tr>
+
+            <tr>
+                <th>MCUFRIEND_kbv.h</th>
+                <td>Interface library for TFT LCD different drivers</td>
+            </tr>
+
+            <tr>
+                <th>Touchscreen.h</th>
+                <td>Interface library for resistive touchscreen display such as TFT displays </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<br><br><br>
+
+<div class="container">
+    <blockquote class="black-text">
+        Here are 4 Different parts where you can start your TFT Learnings !
+    </blockquote>
+</div>
+<br><br><br>
+<div class="container">
+        <div class="col s12 m6">
+            <a href="CONFIGTFT.html" class="card accent-4">
+                <div class="card-image">
+                    <img class="responsive-img"src="TFTCONFIG.png" alt="Arduino Mega">
+                    <span class="card-title right ">TFT Configuration</span>
+                </div>
+            </a>
+        </div>
+<br>
+        <div class="col s12 m6">
+            <a href="TEXTANDCOLORS.html" class="card teal accent-4">
+                <div class="card-image">
+                    <img class="responsive-img"src="TEXTCOLORS.png" alt="Arduino Mega">
+                    <span class="card-title right ">Colors and Text</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card teal accent-4">
+                <a href="FILLSCREEN.html" class="card-image">
+                    <img class="responsive-img"src="FILLSCREEN.png" alt="Arduino Mega">
+                    <span class="card-title right ">FillScreen TFT Function</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="col s12 m6">
+            <div class="card teal accent-4">
+                <a href="ButtonsFunction.html" class="card-image">
+                    <img class="responsive-img"src="BUTTON.png" alt="Arduino Mega">
+                    <span class="card-title right">Buttons and Functions</span>
+                </a>
+            </div>
+        </div>
+
+
+
+</div>
+
+<div style="height: 200px;"></div>
+
+<footer class="page-footer teal accent-4">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <a href="" class="brand-logo"><img src="LOGO.png" alt=""></a>
+                <p class="white-text">Create. Innovate. ReCreate.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 style="font-family: Century;" class="white-text">Let's Talk</h5>
+                <ul>
+                    <li><a style="font-family: Century;"class="grey-text text-lighten-3" href="https://www.facebook.com/rj.resma/"> <i class="fa-brands fa-facebook"></i> Rj Resma</a></li>
+                    <br>
+                    <li><div style="font-family: Century;"class="grey-text text-lighten-3" href=""><i class="fa-solid fa-square-phone"></i> +63 927 734 5492</div></li>
+                    <li style="font-family: Century;"><a class="grey-text text-lighten-3" href=""><i class="fa-solid fa-envelope"></i></a> rrupertjames@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <h7 class="teal-text">Arduino 2024 <i class="fa-solid fa-copyright"></i></h7>
+    </div>
+</footer>
+
+    <!-- Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+    </script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    
+
+    <script>
+        $(document).ready(function(){
+            //materialbox init
+            $('.materialboxed').materialbox({
+                inDuration: 1000,
+                outDuration: 1000
+
+            });
+            // Slider init
+            $('.slider').slider({
+                indicators: true,
+                height: 300,
+                duration: 500,
+                interval: 3000,
+            });
+            });
+
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+            });
+
+//Floating Button Intialize
+        document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.fixed-action-btn');
+    var instances = M.FloatingActionButton.init(elems, options);
+        });
+
+  // Or with jQuery
+
+        $(document).ready(function(){
+    $('.fixed-action-btn').floatingActionButton();
+        });
+        
+    </script>
+
+</body>
+</html>

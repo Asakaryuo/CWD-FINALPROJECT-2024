@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- CDNJ Font Awesome Link Tag-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--Compiled Fontawesome -->
+        <script src="https://kit.fontawesome.com/2a83c49f4d.js" crossorigin="anonymous"></script>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" type="image/jpg" href="favicon.png">
+    <title>TFT FillScreen Function</title>
+    <link rel="stylesheet" href="FILLSCREEN.css">
+</head>
+<body>
+    <nav class="custom-nav">
+        <div class="nav-wrapper">
+            <a href="" class="brand-logo center"><img src="LOGO.png" alt=""></a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="ArduinWeb.html"><i class="fa-solid fa-house"></i></li>
+            </ul>
+
+            <ul id="mobile-demo" class="sidenav">
+                <div class="brand-logo">
+                    <img src="LOGO.png" alt="">
+                    <p>Create. Innovate. ReCreate</p>
+                </div>
+                <br><br>
+                <li style="font-family: Century;"><a href="CONFIGTFT.html" class="white-text">CONFIGURATION</a></li>
+                <li style="font-family: Century;"><a href="TEXTANDCOLORS.html" class="white-text">TEXT AND COLORS</a></li>
+                <li style="font-family: Century;"><a href="FILLSCREEN.html" class="white-text">FILLSCREEN</a></li>
+                <li style="font-family: Century;"><a href="ButtonsFunction.html" class="white-text">BUTTONS </a></li>
+                <div style="height:150px"></div>
+                <li><a href="" class="white-text">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+<!--Floating Action Button-->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large white">
+        <i class="fa-regular fa-plus black-text"></i>
+    </a>
+    <ul>
+        <li><a href="#" class="btn-floating light-green"><i class="fa-solid fa-arrow-up black-text"></i></a></li>
+        <li><a href="AboutUS.html" class="btn-floating teal"><i class="fa-solid fa-question black-text"></i></a></li>
+        <li><a href="ArduinWeb.html" class="btn-floating cyan"><i class="fa-solid fa-house black-text"></i></a></li>
+    </ul>
+</div>
+<!-- End of Floating Action-->
+<h1 class="white-text center">FILLSCREEN TFT FUNCTION</h1>
+<br>
+<div class="container">
+    <blockquote class="black-text">
+        Fillscreens and shapes in TFT Display are used to reset the whole screen or just to make a colorful display. Unlike the text this requires a longer format of code to use. 
+    </blockquote>
+<div class="row">
+    <div class="col s6">
+        <table>
+            <thead>
+                <tr>
+                    <th>FillRect Code</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr class="white">
+                <th><i class="orange-text">tft.FillRect</i><i class="teal-text">(X pos,Y pos,Width,Height,Color)</i></th>
+            </tr>
+            <tr class="white">
+                <th><i class="orange-text">tft.FillRect</i><i class="teal-text">(10,20,300,50,RED)</i></th>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+<br><br>
+<div class="col s6">
+<table>
+    <thead>
+        <tr>
+            <th>FillScreen Code</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr class="white">
+            <th><i class="orange-text">tft.FillScreen</i><i class="teal-text">(Color you want to Fill the Screen With)</i></th>
+        </tr>
+        <tr class="white">
+            <th><i class="orange-text">tft.FillScreen</i><i class="teal-text">(BLACK)</i></th>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+<blockquote class="black-text">
+    By using the the codes above, just like in the Texts and Colors, we are going to use the <i class="purple-text">#define</i> function which we are going to use for the defining of colors to be used for the  <i class="orange-text">FillScreen</i> and <i class="orange-text">FillRect</i> functions.
+</blockquote>
+
+
+<!-- Start of Code Box-->
+<div class="code-box">
+    <pre id="codeSnippet">
+        <code>
+//RECTANGLES & FILLSCREEN
+
+//Libraries start with #include <'Library.h'>
+#include <'Adafruit_GFX.h'>
+#include <'MCUFRIEND_kbv.h'>
+#include <'TouchScreen.h'>
+            
+//Use "MCUFRIEND_kbv (name); create a name that you will use in the call out of the code later on
+MCUFRIEND_kbv tft;
+
+//Define the Minimum and Maximum resistance for the Touchscreen threshold
+#define MINPRESSURE 100
+#define MAXPRESSURE 1000
+
+
+//This is the list of the code if u want to add more just use the #define function with a format of #define-"COLOR NAME"-Hex Value
+#define BLACK       0x0000      /*   0,   0,   0 */
+#define NAVY        0x000F      /*   0,   0, 128 */
+#define DARKGREEN   0x03E0      /*   0, 128,   0 */
+#define DARKCYAN    0x03EF      /*   0, 128, 128 */
+#define MAROON      0x7800      /* 128,   0,   0 */
+#define PURPLE      0x780F      /* 128,   0, 128 */
+#define OLIVE       0x7BE0      /* 128, 128,   0 */
+#define LIGHTGREY   0xC618      /* 192, 192, 192 */
+#define DARKGREY    0x7BEF      /* 128, 128, 128 */
+#define BLUE        0x001F      /*   0,   0, 255 */
+#define GREEN       0x07E0      /*   0, 255,   0 */
+#define CYAN        0x07FF      /*   0, 255, 255 */
+#define RED         0xF800      /* 255,   0,   0 */
+#define MAGENTA     0xF81F      /* 255,   0, 255 */
+#define YELLOW      0xFFE0      /* 255, 255,   0 */
+#define WHITE       0xFFFF      /* 255, 255, 255 */
+#define ORANGE      0xFD20      /* 255, 165,   0 */
+#define GREENYELLOW 0xAFE5      /* 173, 255,  47 */
+#define PINK        0xF81F
+
+//This is for the Call out Pins on the Arduino Pins
+const int XP = 6, XM = A2, YP = A1, YM = 7;
+//This is for the sensitivity of the Touchscreen Module
+//NOTE!!! ~~ This differs on TFT Modules check it with the callibration
+const int TS_LEFT =907, TS_RT = 136, TS_TOP = 942, TS_BOT = 139;
+
+void setup() {
+// put your setup code here, to run once:
+uint16_t ID = tft.readID(); //This is used to read the driver chips inside the TFT for it to run smoothly
+if (ID == 0xD3D3) ID = 0x9486; //
+tft.begin(ID);    //Use this to Initialize the TFT
+tft.fillScreen(BLACK);  //This is normally used to restart the whole Screen
+}
+            
+            
+void loop() {
+// put your main code here, to run repeatedly:
+            
+//tft.fillRect(X-Position,Y-Position,Rectangle Width,Rectangle Height,Rectangle Color)
+            
+tft.fillRect(10,20,300,50,RED);
+            
+tft.fillRect(10,80,300,50,BLUE);
+            
+tft.fillRect(10,140,300,50,YELLOW);
+            
+tft.fillRect(10,200,300,50,PURPLE);
+            
+tft.fillRect(10,260,300,50,CYAN);
+            
+tft.fillRect(10,320,300,50,GREEN);
+            
+tft.fillRect(10,380,300,50,OLIVE);
+            
+delay(5000); //Delays are used to delay a command inside the loop where 1000 = 1 second so 5000 here is 5 seconds
+            
+//fillScreens are used to fill the whole TFT screen of the color of your choice
+tft.fillScreen(BLACK);
+
+}
+
+        </code>
+    </pre>
+    <button class="copy-btn" id="copyButton">Copy Code</button>
+</div>
+</div>
+<!-- End of Code Copy-->
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col s6">.
+            <blockquote class="black-text">
+                This is what your TFT display should look like
+            </blockquote>
+            <blockquote class="black-text">
+                Take note that the colors here being used are depending on the <i class="purple-text">#define</i> function you're using before the <i class="teal-text">void</i> <i class="orange-text">setup()</i> you're 
+            </blockquote> 
+
+            
+        </div>
+        <br>
+        <div class="col s6">
+            <div class="card">
+                <div class="card-image">
+                    <img src="FRFILLSCREENRECT.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div style="height: 200px;"></div>
+
+<footer class="page-footer teal accent-4">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <a href="" class="brand-logo"><img src="LOGO.png" alt=""></a>
+                <p class="white-text">Create. Innovate. Recreate.</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 style="font-family: Century;" class="white-text">Let's Talk</h5>
+                <ul>
+                    <li><a style="font-family: Century;"class="grey-text text-lighten-3" href="https://www.facebook.com/rj.resma/"> <i class="fa-brands fa-facebook"></i> Rj Resma</a></li>
+                    <br>
+                    <li><div style="font-family: Century;"class="grey-text text-lighten-3" href=""><i class="fa-solid fa-square-phone"></i> +63 927 734 5492</div></li>
+                    <li><a style="font-family: Century;"class="grey-text text-lighten-3" href="https://twitter.com/doteplayers"><i class="fa-solid fa-envelope"></i></a> rrupertjames@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <h7 class="teal-text">Arduino 2024 <i class="fa-solid fa-copyright"></i></h7>
+    </div>
+</footer>
+
+
+
+
+        <!-- Jquery CDN-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+        <script>
+            $(document).ready(function(){
+                $('.fixed-action-btn').floatingActionButton();
+            });
+
+            $(document).ready(function(){
+            $('.sidenav').sidenav();
+            });
+
+            //Code Copy Button
+                $(document).ready(function () {
+            $('#copyButton').click(function () {
+                // Select the code text
+                const codeText = $('#codeSnippet').text();
+        
+                // Use the Clipboard API to copy text
+                navigator.clipboard.writeText(codeText)
+                    .then(function () {
+                        alert('Code copied to clipboard!');
+                    })
+                    .catch(function (error) {
+                        console.error('Failed to copy code: ', error);
+                    });
+            });
+        });
+            </script>
+</body>
+</html>

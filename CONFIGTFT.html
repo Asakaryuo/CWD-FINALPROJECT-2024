@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- CDNJ Font Awesome Link Tag-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <!--Compiled Fontawesome -->
+            <script src="https://kit.fontawesome.com/2a83c49f4d.js" crossorigin="anonymous"></script>
+            <!-- Compiled and minified CSS -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        
+            <link rel="icon" type="image/jpg" href="favicon.png">
+    <title>TFT Configuration & Specification</title>
+            <link rel="stylesheet" href="CONFIGTFT.css">
+</head>
+<body>
+    <nav class="custom-nav">
+        <div class="nav-wrapper">
+            <a href="" class="brand-logo center"><img src="LOGO.png" alt=""></a>
+
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fa-solid fa-bars"></i></a>
+            <ul id="nav-mobile" class="right">
+                <li><a href="ArduinWeb.html"><i class="fa-solid fa-house"></i></li>
+            </ul>
+
+            <ul id="mobile-demo" class="sidenav">
+                <div class="brand-logo">
+                    <img src="LOGO.png" alt="">
+                    <p>Create. Innovate. ReCreate</p>
+                </div>
+                <br><br>
+                <li style="font-family: Century;"><a href="CONFIGTFT.html" class="white-text">CONFIGURATION</a></li>
+                <li style="font-family: Century;"><a href="TEXTANDCOLORS.html" class="white-text">TEXT AND COLORS</a></li>
+                <li style="font-family: Century;"><a href="FILLSCREEN.html" class="white-text">FILLSCREEN</a></li>
+                <li style="font-family: Century;"><a href="ButtonsFunction.html" class="white-text">BUTTONS </a></li>
+                <div style="height:150px"></div>
+                <li><a href="AboutUS.html" class="white-text">About Us</a></li>
+            </ul>
+        </div>
+    </nav>
+<!--Floating Action Button-->
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large white">
+        <i class="fa-regular fa-plus black-text"></i>
+    </a>
+    <ul>
+        <li><a href="#" class="btn-floating light-green"><i class="fa-solid fa-arrow-up black-text"></i></a></li>
+        <li><a href="AboutUS.html" class="btn-floating teal"><i class="fa-solid fa-question black-text"></i></a></li>
+        <li><a href="ArduinWeb.html" class="btn-floating cyan"><i class="fa-solid fa-house black-text"></i></a></li>
+    </ul>
+</div>
+<!-- End of Floating Action-->
+    <h1 class="center white-text">TFT Configuration and Specification</h1>
+
+    <div class="container">
+        <blockquote>
+            TFT Display differ when it comes to their sizes such as 3.5 inch TFT Display which are best suited for an Arduino AtMega 2560. Since you can just mount it as a <i class="teal-text">TFT Arduino Shield</i> it is much easier and doesnt need intricate wirings to make the TFT Display work.
+        </blockquote>
+        <div class="row">
+            <div class="centered">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="TFTCONFIG.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <blockquote>
+            To ensure the perfectly working condition for TFT. Below are the connections needed to secure before you mount the TFT Display to the Arduino Mega:
+        </blockquote>
+        <table>
+            <thead>
+                <tr>
+                    <th>Arduino Mega Pin</th>
+                    <th>TFT Display Pin</th>
+                    <th>Connection</th>
+                </tr>
+            </thead>
+            <tbody class="white">
+                <tr>
+                    <th>RESET</th>
+                    <th>RESET</th>
+                    <th>RESET - RESET</th>
+                </tr>
+                <tr>
+                    <th>3.3V</th>
+                    <th>3.3V</th>
+                    <th>3.3V - 3.3V</th>
+                </tr>
+                <tr>
+                    <th>5V</th>
+                    <th>5V</th>
+                    <th>5V - 5V</th>
+                </tr>
+                <tr>
+                    <th>GND</th>
+                    <th>GND</th>
+                    <th>GND - GND</th>
+                </tr>
+                <tr>
+                    <th>LCD_RD</th>
+                    <th>A0</th>
+                    <th>LCD_RD - A0</th>
+                </tr>
+                <tr>
+                    <th>LCD_WR</th>
+                    <th>A1</th>
+                    <th>LCD_RD - A1</th>
+                </tr>
+                <tr>
+                    <th>LCD_RS</th>
+                    <th>A2</th>
+                    <th>LCD_RS - A2</th>
+                </tr>
+                <tr>
+                    <th>LCD_CS</th>
+                    <th>A3</th>
+                    <th>LCD_CS - A3</th>
+                </tr>
+                <tr>
+                    <th>LCD_RST</th>
+                    <th>A4</th>
+                    <th>LCD_RST - A4</th>
+                </tr>
+                <tr>
+                    <th>F_CS</th>
+                    <th>A5</th>
+                    <th>F_CS - A5</th>
+                </tr>
+                <tr>
+                    <th>SD_SCK</th>
+                    <th>D13</th>
+                    <th>SD_SCK - D13</th>
+                </tr>
+                <tr>
+                    <th>SD_DO</th>
+                    <th>D12</th>
+                    <th>SD_DO - D12</th>
+                </tr>
+                <tr>
+                    <th>SD_DI</th>
+                    <th>D11</th>
+                    <th>SD_DI - D11</th>
+                </tr>
+                <tr>
+                    <th>SD_SS</th>
+                    <th>D10</th>
+                    <th>SD_SS - D10</th>
+                </tr>
+                <tr>
+                    <th>LCD_D1</th>
+                    <th>D9</th>
+                    <th>LCD_D1 - D9</th>
+                </tr>
+                <tr>
+                    <th>LCD_D0</th>
+                    <th>D8</th>
+                    <th>LCD_D0 - D8</th>
+                </tr>
+                <tr>
+                    <th>LCD_D7</th>
+                    <th>D7</th>
+                    <th>LCD_D7 - D7</th>
+                </tr>
+                <tr>
+                    <th>LCD_D6</th>
+                    <th>D6</th>
+                    <th>LCD_D6 - D6</th>
+                </tr>
+                <tr>
+                    <th>LCD_D5</th>
+                    <th>D5</th>
+                    <th>LCD_D5 - D5</th>
+                </tr>
+                <tr>
+                    <th>LCD_D4</th>
+                    <th>D4</th>
+                    <th>LCD_D4 - D4</th>
+                </tr>
+                <tr>
+                    <th>LCD_D3</th>
+                    <th>D3</th>
+                    <th>LCD_D3 - D3</th>
+                </tr>
+                <tr>
+                    <th>LCD_D2</th>
+                    <th>D2</th>
+                    <th>LCD_D2 - D2</th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <h2 class="center white-text">TFT Screen Orientation</h2>
+    <div class="divider teal"></div>
+    <br><br>
+    <div class="container">
+            <div class="row">
+                <div class="col s4 m6 l6">
+                    <blockquote>
+                        In the <i class="teal-text">Arduino IDE</i> you can set the desired orientation whether your screen should be on Portrait or Landscape by using the <i class="orange-text">.setRotation()</i> function
+                    </blockquote>
+                </div>
+                <div class="col s6 m6 l6">
+                    <br>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Orientation</th>
+                            </tr>
+                        </thead>
+                        <tbody class="white">
+                            <tr>
+                                <th><i class="orange-text">setRotation</i><i class="teal-text">(0)</i></th>
+                                <th>Portrait</th>
+                            </tr>
+                            <tr>
+                                <th><i class="orange-text">setRotation</i><i class="teal-text">(1)</i></th>
+                                <th>Landscape</th>
+                            </tr>
+                            <tr>
+                                <th><i class="orange-text">setRotation</i><i class="teal-text">(2)</i></th>
+                                <th>Inversed Portrait</th>
+                            </tr>
+                            <tr>
+                                <th><i class="orange-text">setRotation</i><i class="teal-text">(3)</i></th>
+                                <th>Inversed Landscape</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </table>
+    </div>
+<br>
+    <h2 class="center white-text">TFT TouchScreen Configuration</h2>
+<br><br>
+    <div class="divider teal"></div>
+    <div class="container">
+        <blockquote>
+            In order for your Touchscreen module to work properly, it is best suited to check your callibration values and coordinates so the Arduino module can map the raw analog readings accurately.
+        </blockquote>
+        <table>
+            <thead>
+                <tr>
+                    <th><i class="purple-text">const int </i> TS_LEFT=0, TS_RT=0, TS_TOP=0, TS_BOT=0;</th>
+                </tr>
+            </thead>
+            <tbody class="white">
+                <tr>
+                    <th><i class="purple-text">const int </i> TS_LEFT =<i class="teal-text">907</i>, TS_RT = <i class="teal-text">136</i>, TS_TOP = <i class="teal-text">942</i>, TS_BOT = <i class="teal-text">139</i>;</th>
+                </tr>
+            </tbody>
+        </table>     
+    </div>
+
+    <div style="height: 200px;"></div>
+
+    <footer class="page-footer teal accent-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <a href="" class="brand-logo"><img src="LOGO.png" alt=""></a>
+                    <p class="white-text">Create. Innovate. Recreate.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 style="font-family: Century;" class="white-text">Let's Talk</h5>
+                    <ul>
+                        <li><a style="font-family: Century;"class="grey-text text-lighten-3" href="https://www.facebook.com/rj.resma/"> <i class="fa-brands fa-facebook"></i> Rj Resma</a></li>
+                        <br>
+                        <li><div style="font-family: Century;"class="grey-text text-lighten-3" href=""><i class="fa-solid fa-square-phone"></i> +63 927 734 5492</div></li>
+                        <li style="font-family: Century;"><a class="grey-text text-lighten-3" href=""><i class="fa-solid fa-envelope"></i></a> rrupertjames@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <h7 class="teal-text">Arduino 2024 <i class="fa-solid fa-copyright"></i></h7>
+        </div>
+    </footer>
+
+        <!-- Jquery CDN-->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('.fixed-action-btn').floatingActionButton();
+            });
+
+            $(document).ready(function(){
+            $('.sidenav').sidenav();
+            });
+
+        </script>
+</body>
+</html>
